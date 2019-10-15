@@ -542,6 +542,30 @@
             "entity": "location"
           }
         ]
+      },
+      {
+        "text": "below 300",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 6,
+            "end": 9,
+            "value": "<300",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "my mail is kumarprakharbhagat@gmail.com",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 11,
+            "end": 39,
+            "value": "kumarprakharbhagat@gmail.com",
+            "entity": "email"
+          }
+        ]
       }
     ]
   }
