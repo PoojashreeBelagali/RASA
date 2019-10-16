@@ -3,10 +3,16 @@ slots:
     type: text
   cuisine:
     type: text
+  price:
+    type: text
+  mailId:
+    type: text
 
 entities:
 - location
 - cuisine
+- price
+-
 
 intents:
  - greet
@@ -42,6 +48,12 @@ templates:
     - "how can I help you?"
   utter_ask_location:
     - "In what location?"
+  utter_ask_price:
+    - "What price range?"
+  utter_ask_for_mail:
+    - "Do you want it emailed to you?"
+  utter_ask_mailid:
+    - "Kinldy provide your mail id"
 
 actions:
 - utter_greet
@@ -51,3 +63,7 @@ actions:
 - utter_ask_location
 - utter_ask_cuisine
 - actions.ActionSearchRestaurants
+- actions.ActionSendMail
+- utter_ask_price
+- utter_ask_for_mail
+- utter_ask_mailid

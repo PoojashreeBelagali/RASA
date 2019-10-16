@@ -563,7 +563,19 @@
             "start": 11,
             "end": 39,
             "value": "kumarprakharbhagat@gmail.com",
-            "entity": "email"
+            "entity": "emailid"
+          }
+        ]
+      },
+      {
+        "text": "here you go vinay@gmail.com",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 12,
+            "end": 27,
+            "value": "vinay@gmail.com",
+            "entity": "emailid"
           }
         ]
       }
