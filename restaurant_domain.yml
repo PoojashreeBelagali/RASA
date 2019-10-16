@@ -5,14 +5,14 @@ slots:
     type: text
   price:
     type: text
-  mailId:
+  emailid:
     type: text
 
 entities:
 - location
 - cuisine
 - price
--
+- emailid
 
 intents:
  - greet

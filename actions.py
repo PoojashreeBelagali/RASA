@@ -49,16 +49,19 @@ class ActionSendMail(Action):
 		lon = d1["location_suggestions"][0]["longitude"]
 		cuisines_dict = {'bakery': 5, 'chinese': 25, 'cafe': 30, 'italian': 55, 'biryani': 7, 'north indian': 50,
 						 'south indian': 85}
-		results = zomato.restaurant_search("", lat, lon, str(cuisines_dict.get(cuisine)), 5)
+		results = zomato.restaurant_search("", lat, lon, str(cuisines_dict.get(cuisine)), 10)
 		d = json.loads(results)
 		response = ""
-		for restaurant in d['restaurants']:
-			response = response + "Found " + restaurant['restaurant']['name'] + " in " + \
-					   restaurant['restaurant']['location']['address'] + "\n"
+		if d['results_found'] == 0:
+			response = "no results"
+		else:
+			for restaurant in d['restaurants']:
+				response = response + "Found " + restaurant['restaurant']['name'] + " in " + \
+						   restaurant['restaurant']['location']['address'] + "\n"
 
 		config = {"user_mail": "kumarprakharbhagat.ml7@iiitb.net", "user_password": "Prakhar@1989"}
-		mail = mailsmyp(config)
-		to = tracker.get_slot('mailid')
+		mail = mailsmyp.initialize_app(config)
+		to = tracker.get_slot('emailid')
 		mail.send_mail(to, response)
 
 
