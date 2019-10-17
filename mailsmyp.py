@@ -22,7 +22,7 @@ class SendMail:
         message = MIMEMultipart()
         message['From'] = sender_address
         message['To'] = receiver_address
-        message['Subject'] = 'Top 10 resturant for your resturant search'  # The subject line
+        message['Subject'] = 'Top 10 resturant for you [no-reply]'  # The subject line
         # The body and the attachments for the mail
         message.attach(MIMEText(content, 'plain'))
         # Create SMTP session for sending the mail
