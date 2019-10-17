@@ -22,10 +22,10 @@ class ActionSearchRestaurants(Action):
 		d1 = json.loads(location_detail)
 		lat=d1["location_suggestions"][0]["latitude"]
 		lon=d1["location_suggestions"][0]["longitude"]
-		city_name = d1["location_suggestions"][0]["name"]
+		city_name = str(d1["location_suggestions"][0]["city_name"]).lower()
 		cuisines_dict = {'mexican': 73, 'chinese': 25, 'american': 1, 'italian': 55, 'north indian': 50,
 						 'south indian': 85}
-		city_set = {"bangalore", "chennai", "delhi", "hyderabad", "kolkata", "mumbai", "ahmedabad", "pune", "agra",
+		city_set = {"bengaluru", "chennai", "delhi", "hyderabad", "kolkata", "mumbai", "ahmedabad", "pune", "agra",
 					"ajmer", "aligarh", "amravati", "amritsar", "asansol", "aurangabad", "bareilly", "belgaum",
 					"bhavnagar", "bhiwandi", "bhopal", "bhubaneswar", "bikaner", "bilaspur", "bokarosteelcity",
 					"chandigarh", "coimbatorenagpur", "cuttack", "dehradun", "dhanbad", "bhilai", "durgapur", "erode",
@@ -51,8 +51,8 @@ class ActionSearchRestaurants(Action):
 				response = "no results"
 			else:
 				for restaurant in d['restaurants']:
-					response = response + restaurant['restaurant']['name'] + "	 in " + \
-							   restaurant['restaurant']['location']['address'] + "has been rated" + \
+					response = response + "[" +restaurant['restaurant']['name'] + "] in [" + \
+							   restaurant['restaurant']['location']['address'] + "] has been rated :" + \
 							   restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n"
 		else :
 			response = "Sorry this city is not serviceable"
@@ -84,12 +84,13 @@ class ActionSendMail(Action):
 			response = "Sorry, no results found"
 		else:
 			for restaurant in d['restaurants']:
-				response = response + restaurant['restaurant']['name'] + "	 in " + \
-						   restaurant['restaurant']['location']['address'] + "has been rated" + \
-						   restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n"
+				response = response + "["+ restaurant['restaurant']['name'] + "] in [" + \
+						   restaurant['restaurant']['location']['address'] + "] has been rated :" + \
+						   restaurant['restaurant']['user_rating']['aggregate_rating'] + \
+						   ", avg cost for two here is Rs." + str(restaurant['restaurant']['average_cost_for_two']) + "\n"
 		response = response + "\n\n" + "Best regards," + "\n" + "Foodie Inc."
 
-		config = {"user_mail": "kumarprakharbhagat.ml7@iiitb.net", "user_password": base64.b64decode("UHJha2hhckAxOTg5")}
+		config = {"user_mail": "kumarprakharbhagat.ml7@iiitb.net", "user_password": "Prakhar@1989"}
 		mail = mailsmyp.initialize_app(config)
 		to = tracker.get_slot('emailid')
 		mail.send_mail(to, response)
