@@ -246,25 +246,13 @@
         ]
       },
       {
-        "text": "show me cheap restaurants",
+        "text": "Lesser than Rs. 300",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 12,
-            "end": 15,
-            "value": "100",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "below 399",
-        "intent": "restaurant_search",
-        "entities": [
-          {
-            "start": 16,
+            "start": 0,
             "end": 19,
-            "value": "399",
+            "value": "Lesser than Rs. 300",
             "entity": "price"
           }
         ]
@@ -274,9 +262,9 @@
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 0,
-            "end": 3,
-            "value": "100",
+            "start": 8,
+            "end": 23,
+            "value": "pocket friendly",
             "entity": "price"
           }
         ]
@@ -304,16 +292,16 @@
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 0,
-            "end": 3,
-            "value": "100",
-            "entity": "price"
-          },
-          {
             "start": 32,
             "end": 37,
             "value": "mumbai",
             "entity": "location"
+          },
+          {
+            "start": 7,
+            "end": 23,
+            "value": " pocket friendly",
+            "entity": "price"
           }
         ]
       },
@@ -415,12 +403,6 @@
             "end": 20,
             "value": "west",
             "entity": "location"
-          },
-          {
-            "start": 12,
-            "end": 16,
-            "value": "300",
-            "entity": "price"
           }
         ]
       },
@@ -797,6 +779,66 @@
             "end": 11,
             "value": "499",
             "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "Rs. 300 to 700",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 4,
+            "end": 14,
+            "value": "300 to 700",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "More than 700",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 10,
+            "end": 13,
+            "value": "700",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "300",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "300",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "700",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "700",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "I’ll prefer Italian!",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "Italian",
+            "entity": "cuisine"
           }
         ]
       }
