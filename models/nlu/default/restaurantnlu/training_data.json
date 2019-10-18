@@ -137,33 +137,21 @@
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 12,
-            "end": 15,
-            "value": "100",
-            "entity": "price"
-          }
-        ],
-        "text": "show me cheap restaurants"
-      },
-      {
-        "intent": "restaurant_search",
-        "entities": [
-          {
-            "start": 16,
-            "end": 19,
-            "value": "399",
-            "entity": "price"
-          }
-        ],
-        "text": "below 399"
-      },
-      {
-        "intent": "restaurant_search",
-        "entities": [
-          {
             "start": 0,
-            "end": 3,
-            "value": "100",
+            "end": 19,
+            "value": "Lesser than Rs. 300",
+            "entity": "price"
+          }
+        ],
+        "text": "Lesser than Rs. 300"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 23,
+            "value": "pocket friendly",
             "entity": "price"
           }
         ],
@@ -191,16 +179,16 @@
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 0,
-            "end": 3,
-            "value": "100",
-            "entity": "price"
-          },
-          {
             "start": 32,
             "end": 37,
             "value": "mumbai",
             "entity": "location"
+          },
+          {
+            "start": 7,
+            "end": 23,
+            "value": " pocket friendly",
+            "entity": "price"
           }
         ],
         "text": "show me pocket friendly Mumbai"
@@ -227,21 +215,9 @@
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 8,
-            "end": 14,
-            "value": "chinese",
-            "entity": "cuisine"
-          },
-          {
-            "start": 36,
-            "end": 41,
-            "value": "north",
-            "entity": "location"
-          },
-          {
-            "start": 47,
-            "end": 51,
-            "value": "2000",
+            "start": 19,
+            "end": 29,
+            "value": "luxurious ",
             "entity": "price"
           }
         ],
@@ -269,15 +245,9 @@
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 27,
-            "end": 31,
-            "value": "Bengaluru",
-            "entity": "location"
-          },
-          {
             "start": 20,
-            "end": 26,
-            "value": "American",
+            "end": 27,
+            "value": "indian ",
             "entity": "cuisine"
           }
         ],
@@ -285,6 +255,14 @@
       },
       {
         "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 11,
+            "end": 22,
+            "value": "restaurants",
+            "entity": ""
+          }
+        ],
         "text": "search for restaurants"
       },
       {
@@ -666,6 +644,66 @@
           }
         ],
         "text": "Give me restaurants between 300 to la"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 4,
+            "end": 14,
+            "value": "300 to 700",
+            "entity": "price"
+          }
+        ],
+        "text": "Rs. 300 to 700"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 10,
+            "end": 13,
+            "value": "700",
+            "entity": "price"
+          }
+        ],
+        "text": "More than 700"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "300",
+            "entity": "price"
+          }
+        ],
+        "text": "300"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "700",
+            "entity": "price"
+          }
+        ],
+        "text": "700"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "Italian",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "I’ll prefer Italian!"
       }
     ],
     "regex_features": [
