@@ -848,6 +848,30 @@
             "entity": "price"
           }
         ]
+      },
+      {
+        "text": "between 300 to 700",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "300 to 700",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "In range of 300 to 700",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 12,
+            "end": 22,
+            "value": "300 to 700",
+            "entity": "price"
+          }
+        ]
       }
     ]
   }
