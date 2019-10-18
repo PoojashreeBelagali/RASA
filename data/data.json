@@ -274,14 +274,14 @@
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 18,
-            "end": 21,
-            "value": "100",
+            "start": 8,
+            "end": 24,
+            "value": "pocket friendly ",
             "entity": "price"
           },
           {
-            "start": 0,
-            "end": 6,
+            "start": 27,
+            "end": 34,
             "value": "Chennai",
             "entity": "location"
           }
@@ -870,6 +870,78 @@
             "end": 22,
             "value": "300 to 700",
             "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "I am  searhing for American food!",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 19,
+            "end": 28,
+            "value": "American ",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "I am  searching for food in Kolkata ",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 28,
+            "end": 36,
+            "value": "Kolkata ",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Looking for restaurants in Bengaluru below 300",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 27,
+            "end": 37,
+            "value": "Bengaluru ",
+            "entity": "location"
+          },
+          {
+            "start": 37,
+            "end": 46,
+            "value": "below 300",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "Best Biryani in Hyderabad",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 5,
+            "end": 13,
+            "value": "Biryani ",
+            "entity": "cuisine"
+          },
+          {
+            "start": 16,
+            "end": 25,
+            "value": "Hyderabad",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Need Biryani!!",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 5,
+            "end": 12,
+            "value": "Biryani",
+            "entity": "cuisine"
           }
         ]
       }
