@@ -8,7 +8,13 @@
       {
         "name": "greet",
         "pattern": "hey[^\\s]*"
+      },
+      {
+        "name" : "emailid",
+        "pattern": "^\\\\w+(\\\\w+)*\\\\@(\\\\w+)*\\\\.(\\\\w+)*(.(\\\\w+)*)?$"
       }
+
+
     ],
     "entity_synonyms": [
       {
