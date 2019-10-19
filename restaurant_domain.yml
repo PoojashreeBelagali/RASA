@@ -51,9 +51,11 @@ templates:
   utter_ask_howcanhelp:
     - "how can I help you?"
   utter_ask_location:
-    - "In which location?"
+    - "In which city you live?"
+    - "In which city?"
+    - "Which city you want me to look into?"
   utter_ask_price:
-    - text: "What price range are you looking at?"
+    - text: "What price range are you looking at(cost for 2)?"
       buttons:
         - title: "Lesser than Rs. 300"
           payload: "300"

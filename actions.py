@@ -43,10 +43,13 @@ class ActionSearchRestaurants(Action):
 
 		isCityServiceable = city_name in city_set
 		response = ""
-		if isCityServiceable:
+		if isCityServiceable and cuisine in cuisines_dict:
 			response = self.findTopFive(lat, lon, str(cuisines_dict.get(cuisine)), price, zomato)
-		else :
+		elif not isCityServiceable:
 			response = "Sorry this city is not serviceable"
+		elif cuisine not in cuisines_dict:
+			response = "Sorry this cuisine is not available"
+
 
 		dispatcher.utter_message("-----"+response)
 		return [SlotSet('location',loc)]
@@ -54,29 +57,40 @@ class ActionSearchRestaurants(Action):
 	def findTopFive(self, lat, lon, cusine, price, zomato):
 		counter = 0
 		offset = 0
+		response = ""
 		while True:
 			results = zomato.restaurant_search("", lat, lon, cusine, offset)
 			d = json.loads(results)
-			if d['results_found'] == 0:
-				if counter == 0:
-					response = "Sorry, no results found"
-				break
-			if price == "300":
-				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] <= 300]
-			elif price == "300 to 700":
-				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] >= 300 and x['restaurant']['average_cost_for_two'] <= 700]
-			else:
-				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] >= 700]
-
-			for restaurant in filteredResult:
-				if counter == 5:
+			if "code" not in d:
+				if d['results_found'] == 0:
+					if counter == 0:
+						response = "Sorry, no results found"
 					break
-				response = response + "[" + restaurant['restaurant']['name'] + "] in [" + \
-						   restaurant['restaurant']['location']['address'] + "] has been rated :" + \
-						   restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n"
-				counter = counter + 1
+				if price == "300":
+					filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] <= 300]
+				elif price == "300 to 700":
+					filteredResult = [x for x in d['restaurants'] if
+									  x['restaurant']['average_cost_for_two'] >= 300 and x['restaurant'][
+										  'average_cost_for_two'] <= 700]
+				else:
+					filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] >= 700]
+
+				for restaurant in filteredResult:
+					if counter == 5:
+						break
+					response = response + "[" + restaurant['restaurant']['name'] + "] in [" + \
+							   restaurant['restaurant']['location']['address'] + "] has been rated :" + \
+							   restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n"
+					counter = counter + 1
+
+
 			if counter == 5:
 				break
+			if "code" in d:
+				if counter != 0:
+					break
+				else:
+					response = "Sorry, server busy try after sometime."
 			offset = offset + 20
 		return response
 
@@ -97,7 +111,11 @@ class ActionSendMail(Action):
 		cuisines_dict = {'mexican': 73, 'chinese': 25, 'american': 1, 'italian': 55, 'north indian': 50,
 						 'south indian': 85}
 
-		response = self.findTopTen(lat, lon, str(cuisines_dict.get(cuisine)), price, zomato)
+		if cuisine in cuisines_dict:
+			response = self.findTopTen(lat, lon, str(cuisines_dict.get(cuisine)), price, zomato)
+		elif cuisine not in cuisines_dict:
+			response = "Sorry this cuisine is not available"
+
 
 		config = {"user_mail": "kumarprakharbhagat.ml7@iiitb.net", "user_password": "Prakhar@1989"}
 		mail = mailsmyp.initialize_app(config)
@@ -111,28 +129,37 @@ class ActionSendMail(Action):
 		while True:
 			results = zomato.restaurant_search("", lat, lon, cusine, offset)
 			d = json.loads(results)
-			if d['results_found'] == 0:
-				if counter == 0:
-					response = "Sorry, no results found"
-				break
-			if price == "300":
-				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] <= 300]
-			elif price == "300 to 700":
-				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] >= 300 and x['restaurant']['average_cost_for_two'] <= 700]
-			else:
-				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] >= 700]
-
-			for restaurant in filteredResult:
-				if counter == 10:
+			if "code" not in d:
+				if d['results_found'] == 0:
+					if counter == 0:
+						response = "Sorry, no results found"
 					break
-				response = response + "[" + restaurant['restaurant']['name'] + "] in [" + \
-						   restaurant['restaurant']['location']['address'] + "] has been rated :" + \
-						   restaurant['restaurant']['user_rating']['aggregate_rating'] + \
-						   ", avg cost for two here is Rs." + str(
-					restaurant['restaurant']['average_cost_for_two']) + "\n"
-				counter = counter + 1
+				if price == "300":
+					filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] <= 300]
+				elif price == "300 to 700":
+					filteredResult = [x for x in d['restaurants'] if
+									  x['restaurant']['average_cost_for_two'] >= 300 and x['restaurant'][
+										  'average_cost_for_two'] <= 700]
+				else:
+					filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] >= 700]
+
+				for restaurant in filteredResult:
+					if counter == 10:
+						break
+					response = response + "[" + restaurant['restaurant']['name'] + "] in [" + \
+							   restaurant['restaurant']['location']['address'] + "] has been rated :" + \
+							   restaurant['restaurant']['user_rating']['aggregate_rating'] + \
+							   ", avg cost for two here is Rs." + str(
+						restaurant['restaurant']['average_cost_for_two']) + "\n"
+					counter = counter + 1
+
 			if counter == 10:
 				break
+			if "code" in d:
+				if counter != 0:
+					break
+				else:
+					response = "Sorry, server busy try after sometime."
 			offset = offset + 20
 
 		response = response + "\n\n" + "Best regards," + "\n" + "Foodie Inc."
