@@ -8,6 +8,10 @@
       {
         "name": "greet",
         "pattern": "hey[^\\s]*"
+      },
+      {
+        "name": "emaild",
+        "pattern": "^\\\\w+(\\\\w+)*\\\\@(\\\\w+)*\\\\.(\\\\w+)*(.(\\\\w+)*)?$"
       }
     ],
     "entity_synonyms": [
@@ -1013,6 +1017,18 @@
             "end": 19,
             "value": "email id",
             "entity": "emailid"
+          }
+        ]
+      },
+      {
+        "text": "Lesser than Rs. 300",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 16,
+            "end": 19,
+            "value": "300",
+            "entity": "price"
           }
         ]
       }
