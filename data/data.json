@@ -8,13 +8,7 @@
       {
         "name": "greet",
         "pattern": "hey[^\\s]*"
-      },
-      {
-        "name" : "emailid",
-        "pattern": "^\\\\w+(\\\\w+)*\\\\@(\\\\w+)*\\\\.(\\\\w+)*(.(\\\\w+)*)?$"
       }
-
-
     ],
     "entity_synonyms": [
       {
@@ -335,24 +329,6 @@
         ]
       },
       {
-        "text": "show me a mexican place in the centre",
-        "intent": "restaurant_search",
-        "entities": [
-          {
-            "start": 31,
-            "end": 37,
-            "value": "centre",
-            "entity": "location"
-          },
-          {
-            "start": 10,
-            "end": 17,
-            "value": "mexican",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
         "text": "i am looking for an indian spot called olaolaolaolaolaola",
         "intent": "restaurant_search",
         "entities": [
@@ -589,18 +565,6 @@
             "end": 42,
             "value": "delhi",
             "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "I am looking for mexican indian fusion",
-        "intent": "restaurant_search",
-        "entities": [
-          {
-            "start": 17,
-            "end": 38,
-            "value": "mexican indian fusion",
-            "entity": "cuisine"
           }
         ]
       },
@@ -873,12 +837,12 @@
         ]
       },
       {
-        "text": "I am  searhing for American food!",
+        "text": "I am  searching for American food!",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 19,
-            "end": 28,
+            "start": 20,
+            "end": 29,
             "value": "American ",
             "entity": "cuisine"
           }
@@ -999,25 +963,25 @@
         ]
       },
       {
-        "text": "My email id is this ",
+        "text": "My email id is this : belagali.pooja@gmail.com",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 3,
-            "end": 11,
-            "value": "email id",
+            "start": 22,
+            "end": 46,
+            "value": "belagali.pooja@gmail.com",
             "entity": "emailid"
           }
         ]
       },
       {
-        "text": "Send to my email id",
+        "text": "Send to abc@xyz.com",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 11,
+            "start": 8,
             "end": 19,
-            "value": "email id",
+            "value": "abc@xyz.com",
             "entity": "emailid"
           }
         ]
@@ -1038,6 +1002,156 @@
         "text": "I am hungry",
         "intent": "restaurant_search",
         "entities": []
+      },
+      {
+        "text": "  I am looking for south indian food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 19,
+            "end": 31,
+            "value": "south indian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "I want to eat North Indian food!",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 13,
+            "end": 26,
+            "value": " North Indian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Send Invoice to abc@gmail.com",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 16,
+            "end": 29,
+            "value": "abc@gmail.com",
+            "entity": "emailid"
+          }
+        ]
+      },
+      {
+        "text": "Mexican Food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "Mexican",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Looking for Mexican food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 12,
+            "end": 20,
+            "value": "Mexican",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Please find North Indian food in bengaluru",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 12,
+            "end": 24,
+            "value": "North Indian",
+            "entity": "cuisine"
+          },
+          {
+            "start": 33,
+            "end": 42,
+            "value": "bengaluru",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Show me Chinese places in Kolkata",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 16,
+            "value": "Chinese ",
+            "entity": "cuisine"
+          },
+          {
+            "start": 26,
+            "end": 33,
+            "value": "Kolkata",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Show me South Indian food places in Delhi",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 36,
+            "end": 41,
+            "value": "Delhi",
+            "entity": "location"
+          },
+          {
+            "start": 7,
+            "end": 20,
+            "value": " South Indian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Mexican",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "Mexican",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Searching for American food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 14,
+            "end": 23,
+            "value": "American",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "American",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "American",
+            "entity": "cuisine"
+          }
+        ]
       }
     ]
   }
