@@ -1320,6 +1320,203 @@
             "entity": "cuisine"
           }
         ]
+      },
+      {
+        "text": "Suggest me some American restaurants",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 16,
+            "end": 24,
+            "value": "American",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "American Food!",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "American",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "More food in Belgaum",
+        "intent": "restaurant_search",
+        "entities": []
+      },
+      {
+        "text": "Please help me in finding american cuisine in Bangalore",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 26,
+            "end": 34,
+            "value": "american",
+            "entity": "cuisine"
+          },
+          {
+            "start": 46,
+            "end": 55,
+            "value": "Bangalore",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Please help me in finding Mexican cuisine in Bangalore",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 26,
+            "end": 34,
+            "value": "Mexican ",
+            "entity": "cuisine"
+          },
+          {
+            "start": 45,
+            "end": 54,
+            "value": "Bangalore",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Please help me in finding Chinese cuisine in Bangalore",
+        "intent": "",
+        "entities": [
+          {
+            "start": 26,
+            "end": 34,
+            "value": "Chinese",
+            "entity": "cuisine"
+          },
+          {
+            "start": 45,
+            "end": 54,
+            "value": "Bangalore",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Please help me in finding South Indian cuisine in New Delhi",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 50,
+            "end": 59,
+            "value": "New Delhi",
+            "entity": "location"
+          },
+          {
+            "start": 26,
+            "end": 39,
+            "value": "South Indian ",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Please find North Indian Food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 12,
+            "end": 24,
+            "value": "North Indian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "I am hungry for Italian food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 16,
+            "end": 23,
+            "value": "Italian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest Italian food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 15,
+            "value": "Italian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest Mexican food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 15,
+            "value": "Mexican",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest Chinese food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 15,
+            "value": "Chinese",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest American food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 16,
+            "value": "American",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest North Indian food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 20,
+            "value": "North Indian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest South Indian food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 20,
+            "value": "South Indian",
+            "entity": "cuisine"
+          }
+        ]
       }
     ]
   }
