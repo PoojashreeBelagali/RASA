@@ -54,7 +54,7 @@ templates:
     - "In which location?"
   utter_ask_price:
     - text: "What price range are you looking at?"
-    - buttons:
+      buttons:
         - title: "Lesser than Rs. 300"
           payload: "300"
         - title: "Rs. 300 to 700"
