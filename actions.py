@@ -18,6 +18,7 @@ class ActionSearchRestaurants(Action):
 		zomato = zomatopy.initialize_app(config)
 		loc = tracker.get_slot('location')
 		cuisine = tracker.get_slot('cuisine')
+		price = tracker.get_slot('price')
 		location_detail=zomato.get_location(loc, 1)
 		d1 = json.loads(location_detail)
 		lat=d1["location_suggestions"][0]["latitude"]
@@ -43,24 +44,41 @@ class ActionSearchRestaurants(Action):
 		isCityServiceable = city_name in city_set
 		response = ""
 		if isCityServiceable:
-			results = zomato.restaurant_search("", lat, lon, str(cuisines_dict.get(cuisine)), 5)
-
-			d = json.loads(results)
-
-			if d['results_found'] == 0:
-				response = "no results"
-			else:
-				for restaurant in d['restaurants']:
-					response = response + "[" +restaurant['restaurant']['name'] + "] in [" + \
-							   restaurant['restaurant']['location']['address'] + "] has been rated :" + \
-							   restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n"
+			response = self.findTopFive(lat, lon, str(cuisines_dict.get(cuisine)), price, zomato)
 		else :
 			response = "Sorry this city is not serviceable"
 
-
-		
 		dispatcher.utter_message("-----"+response)
 		return [SlotSet('location',loc)]
+
+	def findTopFive(self, lat, lon, cusine, price, zomato):
+		counter = 0
+		offset = 0
+		while True:
+			results = zomato.restaurant_search("", lat, lon, cusine, offset)
+			d = json.loads(results)
+			if d['results_found'] == 0:
+				if counter == 0:
+					response = "Sorry, no results found"
+				break
+			if price == "300":
+				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] <= 300]
+			elif price == "300 to 700":
+				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] >= 300 and x['restaurant']['average_cost_for_two'] <= 700]
+			else:
+				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] >= 700]
+
+			for restaurant in filteredResult:
+				if counter == 5:
+					break
+				response = response + "[" + restaurant['restaurant']['name'] + "] in [" + \
+						   restaurant['restaurant']['location']['address'] + "] has been rated :" + \
+						   restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n"
+				counter = counter + 1
+			if counter == 5:
+				break
+			offset = offset + 20
+		return response
 
 class ActionSendMail(Action):
 	def name(self):
@@ -71,29 +89,55 @@ class ActionSendMail(Action):
 		zomato = zomatopy.initialize_app(configZomato)
 		loc = tracker.get_slot('location')
 		cuisine = tracker.get_slot('cuisine')
+		price = tracker.get_slot('price')
 		location_detail = zomato.get_location(loc, 1)
 		d1 = json.loads(location_detail)
 		lat = d1["location_suggestions"][0]["latitude"]
 		lon = d1["location_suggestions"][0]["longitude"]
 		cuisines_dict = {'mexican': 73, 'chinese': 25, 'american': 1, 'italian': 55, 'north indian': 50,
 						 'south indian': 85}
-		results = zomato.restaurant_search("", lat, lon, str(cuisines_dict.get(cuisine)), 10)
-		d = json.loads(results)
-		response = "Hi There," + "\n\n" + "Please find the requested restaurant details" + "\n\n\n"
-		if d['results_found'] == 0:
-			response = "Sorry, no results found"
-		else:
-			for restaurant in d['restaurants']:
-				response = response + "["+ restaurant['restaurant']['name'] + "] in [" + \
-						   restaurant['restaurant']['location']['address'] + "] has been rated :" + \
-						   restaurant['restaurant']['user_rating']['aggregate_rating'] + \
-						   ", avg cost for two here is Rs." + str(restaurant['restaurant']['average_cost_for_two']) + "\n"
-		response = response + "\n\n" + "Best regards," + "\n" + "Foodie Inc."
+
+		response = self.findTopTen(lat, lon, str(cuisines_dict.get(cuisine)), price, zomato)
 
 		config = {"user_mail": "kumarprakharbhagat.ml7@iiitb.net", "user_password": "Prakhar@1989"}
 		mail = mailsmyp.initialize_app(config)
 		to = tracker.get_slot('emailid')
 		mail.send_mail(to, response)
+
+	def findTopTen(self, lat, lon, cusine, price, zomato):
+		counter = 0
+		offset = 0
+		response = "Hi There," + "\n\n" + "Please find the requested restaurant details" + "\n\n\n"
+		while True:
+			results = zomato.restaurant_search("", lat, lon, cusine, offset)
+			d = json.loads(results)
+			if d['results_found'] == 0:
+				if counter == 0:
+					response = "Sorry, no results found"
+				break
+			if price == "300":
+				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] <= 300]
+			elif price == "300 to 700":
+				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] >= 300 and x['restaurant']['average_cost_for_two'] <= 700]
+			else:
+				filteredResult = [x for x in d['restaurants'] if x['restaurant']['average_cost_for_two'] >= 700]
+
+			for restaurant in filteredResult:
+				if counter == 10:
+					break
+				response = response + "[" + restaurant['restaurant']['name'] + "] in [" + \
+						   restaurant['restaurant']['location']['address'] + "] has been rated :" + \
+						   restaurant['restaurant']['user_rating']['aggregate_rating'] + \
+						   ", avg cost for two here is Rs." + str(
+					restaurant['restaurant']['average_cost_for_two']) + "\n"
+				counter = counter + 1
+			if counter == 10:
+				break
+			offset = offset + 20
+
+		response = response + "\n\n" + "Best regards," + "\n" + "Foodie Inc."
+
+		return response
 
 
 
