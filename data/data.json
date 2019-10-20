@@ -87,7 +87,29 @@
         "synonyms": [
           "Delhi",
           "dilli",
-          "new delhi"
+          "new delhi",
+          "delhi ncr"
+        ]
+      },
+      {
+        "value": "noida",
+        "synonyms": [
+          "noida",
+          "delhi ncr"
+        ]
+      },
+       {
+        "value": "gurgaon",
+        "synonyms": [
+          "gurgaon",
+          "delhi ncr"
+        ]
+      },
+      {
+        "value": "faridabad",
+        "synonyms": [
+          "faridabad",
+          "delhi ncr"
         ]
       }
     ],
@@ -1515,6 +1537,454 @@
             "end": 20,
             "value": "South Indian",
             "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest me mexican food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 11,
+            "end": 18,
+            "value": "mexican",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest me american food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 11,
+            "end": 19,
+            "value": "american",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest me chinese food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 11,
+            "end": 18,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest me italian food",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 11,
+            "end": 19,
+            "value": "italian ",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest north indian cuisine",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 20,
+            "value": "north indian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Suggest south indian cuisine",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 20,
+            "value": "south indian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Help me on finding north Indian restaurants",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 19,
+            "end": 31,
+            "value": "north Indian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Help me on finding south indian restaurants",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 19,
+            "end": 31,
+            "value": "south indian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Help me on finding mexican restaurants",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 19,
+            "end": 26,
+            "value": "mexican",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Help me on finding chinese restaurants",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 19,
+            "end": 26,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Help me on finding italian restaurants",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 19,
+            "end": 26,
+            "value": "italian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "Help me on finding american restaurants",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 19,
+            "end": 27,
+            "value": "american",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": " find restaurents in bombay for chinese cusine",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "bombay",
+            "entity": "location"
+          },
+          {
+            "start": 32,
+            "end": 40,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "look for restuarent in delhi and send them to my id belagali.pooja@gmail.com",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 23,
+            "end": 29,
+            "value": "delhi",
+            "entity": "location"
+          },
+          {
+            "start": 52,
+            "end": 76,
+            "value": "belagali.pooja@gmail.com",
+            "entity": "emailid"
+          }
+        ]
+      },
+      {
+        "text": "find Mexican food outlets in pune",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 5,
+            "end": 13,
+            "value": "Mexican",
+            "entity": "cuisine"
+          },
+          {
+            "start": 29,
+            "end": 33,
+            "value": "pune",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "find American food outlets in kolkata",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 5,
+            "end": 14,
+            "value": "American",
+            "entity": "cuisine"
+          },
+          {
+            "start": 30,
+            "end": 37,
+            "value": "kolkata",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "find North Indian food outlets in chennai",
+        "intent": "",
+        "entities": [
+          {
+            "start": 5,
+            "end": 17,
+            "value": "North Indian",
+            "entity": "cuisine"
+          },
+          {
+            "start": 34,
+            "end": 41,
+            "value": "chennai",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "price range greater than 700",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 25,
+            "end": 28,
+            "value": "700",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "245",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "245",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "in between 90 and 100",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 11,
+            "end": 21,
+            "value": "100",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "costly restaurants",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "701",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "cheap restaurants less than 350",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 28,
+            "end": 31,
+            "value": "350",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "costliest restaurant of mumbai",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 24,
+            "end": 30,
+            "value": "mumbai",
+            "entity": "location"
+          },
+          {
+            "start": 0,
+            "end": 9,
+            "value": "701",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "Thiruvananthapuram",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 18,
+            "value": "Thiruvananthapuram",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "kanpur",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "kanpur",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "yes  please",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "no need",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "I’m hungry. Looking out for some good chinese restaurants in chandigarh",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 38,
+            "end": 46,
+            "value": "chinese",
+            "entity": "cuisine"
+          },
+          {
+            "start": 61,
+            "end": 71,
+            "value": "chandigarh",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "chandigarh",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "chandigarh",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Jaipur",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "Jaipur",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Best snacks in Jaipur",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 15,
+            "end": 21,
+            "value": "Jaipur",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Surat",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Surat",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Patna",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Patna",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Ahmedabad",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "Ahmedabad",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Lucknow",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "Lucknow",
+            "entity": "location"
           }
         ]
       }

@@ -25,12 +25,13 @@ intents:
 
 templates:
   utter_greet:
-    - "hey there! How may i help you"
-    - "Hi, How can I help you!"
-    - "Hey, How is it going. How May I help you Today"
+    - "hey there! How may i help you?"
+    - "Hi, How can I help you!?"
+    - "Hey, How is it going. How May I help you Today?"
   utter_goodbye:
-    - "goodbye :("
+    - "Goodbye :("
     - "Bye-bye"
+    - "See you Soon"
   utter_default:
     - "default message"
   utter_ask_cuisine: 
@@ -54,6 +55,7 @@ templates:
     - "In which city you live?"
     - "In which city?"
     - "Which city you want me to look into?"
+    - "In which city are you looking for restaurants?"
   utter_ask_price:
     - text: "What price range are you looking at(cost for 2)?"
       buttons:
@@ -64,6 +66,8 @@ templates:
         - title: "More than 700"
           payload: "700"
   utter_ask_for_mail:
+    - "Should send restaurants details over email?"
+    - "Shall I email you the details?"
     - "Do you want it emailed to you?"
     - "You want it sent via mail?"
   utter_ask_mailid:
