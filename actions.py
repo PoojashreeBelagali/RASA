@@ -5,9 +5,8 @@ from __future__ import unicode_literals
 from rasa_core.actions.action import Action
 from rasa_core.events import SlotSet
 import zomatopy
-import mailsmyp
+import mailpy
 import json
-import base64
 
 
 class ActionSearchRestaurants(Action):
@@ -130,7 +129,7 @@ class ActionSendMail(Action):
             response = "Sorry this cuisine is not available"
 
         config = {"user_mail": "kumarprakharbhagat.ml7@iiitb.net", "user_password": "Prakhar@1989"}
-        mail = mailsmyp.initialize_app(config)
+        mail = mailpy.initialize_app(config)
         to = tracker.get_slot('emailid')
         mail.send_mail(to, response)
 
