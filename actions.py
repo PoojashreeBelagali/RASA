@@ -98,6 +98,11 @@ class ActionSearchRestaurants(Action):
                     break
                 else:
                     return "Sorry, server busy try after sometime."
+            if offset == 500:
+                if counter != 0:
+                    break
+                else:
+                    return "No restaurants found, modify your search"
             offset = offset + 20
         return response
 
@@ -167,6 +172,11 @@ class ActionSendMail(Action):
                     break
                 else:
                     return "Sorry, server busy try after sometime."
+            if offset == 500:
+                if counter != 0:
+                    break
+                else:
+                    return "No restaurants found, modify your search"
             offset = offset + 20
 
         response = response + "\n\n" + "Best regards," + "\n" + "Foodie Inc."

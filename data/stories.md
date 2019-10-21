@@ -14,7 +14,7 @@
     - utter_ask_for_mail
 * goodbye
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story -7273996254737092498
 * greet
@@ -35,7 +35,7 @@
     - slot{"emailid": "belagali.pooja@gmail.com"}
     - action_mail
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story 4815117106456005560
 * greet
@@ -57,7 +57,7 @@
     - slot{"emailid": "belagali.pooja@gmail.com"}
     - action_mail
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story 7592444740733743432
 * greet
@@ -75,7 +75,7 @@
     - utter_ask_for_mail
 * goodbye
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story -3087864445675830362
 * greet
@@ -95,7 +95,7 @@
     - utter_ask_for_mail
 * goodbye
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story -5869706125876783594
 * greet
@@ -117,7 +117,7 @@
     - slot{"emailid": "prakharbhagat@gmail.com"}
     - action_mail
     - utter_goodbye
-    - export
+    - action_restart
 
 
 ## Generated Story 564735842531408083
@@ -138,7 +138,7 @@
     - utter_ask_for_mail
 * goodbye
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story 1166232535489337169
 * greet
@@ -156,7 +156,7 @@
     - utter_ask_for_mail
 * goodbye
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story 5566224104215452549
 * greet
@@ -176,7 +176,7 @@
     - slot{"emailid": "prakharbhagat@gmail.com"}
     - action_mail
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story -7279536267822436613
 * greet
@@ -190,7 +190,7 @@
     - action_restaurant
     - slot{"location": null}
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story -1690811419344999220
 * greet
@@ -209,8 +209,8 @@
 * restaurant_search{"emailid": "belagali.pooja@gmail.com"}
     - slot{"emailid": "belagali.pooja@gmail.com"}
     - action_mail
-    - utter_goodbye
-    - export
+    - utter_email_sent
+    - action_restart
 
 ## Generated Story 5404477888299937548
 * greet
@@ -224,7 +224,11 @@
     - action_restaurant
     - slot{"location": "bangalore"}
     - utter_ask_for_mail
+    - action_mail
+    - utter_email_sent
+    - action_restart
 * goodbye
     - utter_goodbye
-    - export
+    - action_restart
+
 

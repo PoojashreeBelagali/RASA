@@ -71,8 +71,14 @@ templates:
     - "Do you want it emailed to you?"
     - "You want it sent via mail?"
   utter_ask_mailid:
-    - "Kinldy provide your mail id"
+    - "Kindly provide your mail id"
     - "What is your mail id"
+  utter_email_sent:
+    - "Email sent, kindly check your mail "
+    - "Sent email"
+  utter_restart:
+    - "restaurantbot at your service"
+
 
 actions:
 - utter_greet
@@ -86,3 +92,5 @@ actions:
 - utter_ask_price
 - utter_ask_for_mail
 - utter_ask_mailid
+- utter_email_sent
+- utter_restart
