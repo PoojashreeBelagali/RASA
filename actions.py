@@ -128,7 +128,7 @@ class ActionSendMail(Action):
         elif cuisine not in cuisines_dict:
             response = "Sorry this cuisine is not available"
 
-        config = {"user_mail": "kumarprakharbhagat.ml7@iiitb.net", "user_password": "Prakhar@1989"}
+        config = {"user_mail": "UserName", "user_password": "Password"}
         mail = mailpy.initialize_app(config)
         to = tracker.get_slot('emailid')
         mail.send_mail(to, response)
